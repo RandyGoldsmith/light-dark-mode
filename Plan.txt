@@ -1,0 +1,7 @@
+Goal - To make a light dark mode page using Context API
+
+Components- Header, Footer, Switch/Button for toggle on/off dark/light mode, superheroes, superheros-items
+
+1. Create the header
+2. Create the superheroes body which will hold the superheoes items
+3. 
