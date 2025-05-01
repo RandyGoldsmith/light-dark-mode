@@ -12,7 +12,6 @@ export default function Beers() {
       const response = await fetch(url);
       const beer = await response.json();
       setLoadedBeers(beer);
-      console.log(beer);
     }
 
     fetchBeers();

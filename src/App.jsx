@@ -2,7 +2,7 @@ import "./App.css";
 import Beers from "./components/Beers";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import ThemeContext from "./components/store/ThemeContext";
 
 function App() {
@@ -11,6 +11,22 @@ function App() {
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark-mode");
+    } else {
+      document.documentElement.classList.remove("dark-mode");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

@@ -1,19 +1,17 @@
 import Button from "./UI/Button";
 
 export default function BeerItem({ beer }) {
-  const url = "https://punkapi.online/v3/";
+  const url = "https://punkapi.online/v3";
+  const imageUrl =
+    beer.image === "keg.png"
+      ? `${url}/images/keg.png`
+      : `${url}/images/${String(beer.id).padStart(3, "0")}.png`;
 
   return (
     <li className="beer-item">
       <article>
-        {beer.image === "keg.png" ? (
-          <img src={`${url}images/keg.png`} style={{ maxWidth: "100px" }} />
-        ) : (
-          <img
-            src={`${url}images/${String(beer.id).padStart(3, "0")}.png`}
-            style={{ maxWidth: "100px" }}
-          />
-        )}
+        <img src={imageUrl} alt={beer.name} style={{ maxWidth: "100px" }} />
+
         <div>
           <h2>{beer.name}</h2>
           <p>{beer.tagline}</p>
