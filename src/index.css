@@ -80,3 +80,33 @@ footer {
 footer p {
   text-align: center;
 }
+
+.button {
+  cursor: pointer;
+  border: 1px solid red;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.button:hover,
+.button:active {
+  background-color: #333;
+  border: 1px solid #333;
+  transition: background-color 0.2 ease;
+}
+
+.text-only {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  font-size: large;
+}
+
+.text-only:hover,
+.text-only:active {
+  color: red;
+}

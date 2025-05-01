@@ -1,3 +1,5 @@
+import Button from "./UI/Button";
+
 export default function BeerItem({ beer }) {
   const url = "https://punkapi.online/v3/";
 
@@ -17,7 +19,7 @@ export default function BeerItem({ beer }) {
           <p>{beer.tagline}</p>
           <p>12.99</p>
         </div>
-        <button>Add to cart</button>
+        <Button>Add to Cart</Button>
       </article>
     </li>
   );
