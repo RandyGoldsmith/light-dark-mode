@@ -2,7 +2,7 @@ export default function BeerItem({ beer }) {
   const url = "https://punkapi.online/v3/";
 
   return (
-    <ul>
+    <li className="beer-item">
       <article>
         {beer.image === "keg.png" ? (
           <img src={`${url}images/keg.png`} style={{ maxWidth: "100px" }} />
@@ -14,9 +14,11 @@ export default function BeerItem({ beer }) {
         )}
         <div>
           <h2>{beer.name}</h2>
-          <h3>{beer.tagline}</h3>
+          <p>{beer.tagline}</p>
+          <p>12.99</p>
         </div>
+        <button>Add to cart</button>
       </article>
-    </ul>
+    </li>
   );
 }
