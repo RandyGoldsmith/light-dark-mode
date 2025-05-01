@@ -1,8 +1,16 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
 #main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  border-bottom: #e0e0e0;
+  background-color: white;
 }
 
 #main-header #title {
@@ -61,6 +69,12 @@ h1 {
 
 nav button {
   margin: 0 0.5rem;
+}
+
+header,
+footer {
+  width: 100%;
+  background-color: white;
 }
 
 footer p {

@@ -21,6 +21,7 @@ export default function Beers() {
   return (
     <>
       <h1>Our Beers</h1>
+
       <ul className="beers">
         {displayedBeers.map((beer) => (
           <BeerItem key={beer.id} beer={beer} />
