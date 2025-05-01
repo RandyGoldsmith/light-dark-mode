@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import ThemeContext from "./store/ThemeContext";
 import BeerItem from "./BeerItem";
 
 export default function Beers() {
   const [loadedBeers, setLoadedBeers] = useState([]);
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     async function fetchBeers() {
@@ -20,7 +22,7 @@ export default function Beers() {
 
   return (
     <>
-      <ul className="beers">
+      <ul className={theme === "dark" ? "beers dark-beers" : "beers"}>
         {displayedBeers.map((beer) => (
           <BeerItem key={beer.id} beer={beer} />
         ))}
