@@ -1,4 +1,5 @@
 import Button from "./UI/Button";
+import { currencyFormatter } from "../util/formatting";
 
 export default function BeerItem({ beer }) {
   const url = "https://punkapi.online/v3";
@@ -15,7 +16,7 @@ export default function BeerItem({ beer }) {
         <div>
           <h2>{beer.name}</h2>
           <p>{beer.tagline}</p>
-          <p>12.99</p>
+          <p>{currencyFormatter.format(beer.price)}</p>
         </div>
         <Button>Add to Cart</Button>
       </article>

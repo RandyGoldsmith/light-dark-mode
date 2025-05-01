@@ -182,3 +182,7 @@ footer p {
 .dark-beers {
   background-color: var(--background-color);
 }
+
+.dark-button {
+  color: white;
+}

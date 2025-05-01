@@ -8,10 +8,22 @@ export default function Beers() {
 
   useEffect(() => {
     async function fetchBeers() {
-      const url = "https://punkapi.online/v3/beers?page=2";
-      const response = await fetch(url);
-      const beer = await response.json();
-      setLoadedBeers(beer);
+      try {
+        const url = "https://punkapi.online/v3/beers?page=2";
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch beers: ${response.status}`);
+        }
+        const beerData = await response.json();
+
+        const beersWithPrices = beerData.map((beer, index) => ({
+          ...beer,
+          price: 9.0 + index * 1.5,
+        }));
+        setLoadedBeers(beersWithPrices);
+      } catch (e) {
+        console.error("Error fetching beers:", e);
+      }
     }
 
     fetchBeers();
