@@ -8,6 +8,7 @@ export default function Header() {
         <h1>Randy Goldsmith</h1>
       </div>
       <nav>
+        <button>Cart 0</button>
         <button>Light/Dark Mode</button>
       </nav>
     </header>

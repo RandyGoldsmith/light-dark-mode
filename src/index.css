@@ -18,6 +18,7 @@
 
 h1 {
   text-transform: uppercase;
+  text-align: center;
 }
 
 .beers {
@@ -56,4 +57,12 @@ h1 {
   max-width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+nav button {
+  margin: 0 0.5rem;
+}
+
+footer p {
+  text-align: center;
 }
